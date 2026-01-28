@@ -1,4 +1,4 @@
-package lecture.creational.builder.mycomputer;
+package creational.builder.computer;
 
 public class MainComputer {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package lecture.creational.builder.mycomputer;
+package creational.builder.computer;
 
 public class Computer {
     private String cpu, ram, storage, screen;

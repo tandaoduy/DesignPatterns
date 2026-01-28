@@ -1,4 +1,4 @@
-package lecture.creational.singleton;
+package creational.singleton;
 
 public class MySingleton {
     private static MySingleton instance;

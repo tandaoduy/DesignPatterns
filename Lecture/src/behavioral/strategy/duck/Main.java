@@ -1,4 +1,4 @@
-package lecture.behavioral.strategy.duck;
+package behavioral.strategy.duck;
 
 public class Main {
     public static void main(String[] args) {

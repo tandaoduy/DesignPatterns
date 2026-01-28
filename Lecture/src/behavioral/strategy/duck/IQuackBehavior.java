@@ -1,4 +1,4 @@
-package lecture.behavioral.strategy.duck;
+package behavioral.strategy.duck;
 
 public interface IQuackBehavior {
     String squack();

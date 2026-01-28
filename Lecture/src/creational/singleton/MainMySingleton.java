@@ -1,4 +1,4 @@
-package lecture.creational.singleton;
+package creational.singleton;
 
 public class MainMySingleton {
     public static void main(String[] args) {
