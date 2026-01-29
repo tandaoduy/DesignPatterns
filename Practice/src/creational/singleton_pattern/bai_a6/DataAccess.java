@@ -1,4 +1,4 @@
-package creational.singleton.bai_a6;
+package creational.singleton_pattern.bai_a6;
 
 import java.util.ArrayList;
 import java.util.List;

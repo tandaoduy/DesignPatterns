@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class DataAccess{
+    -{static} Map<String, DataAccessUpgrade> instances
+    -DataAccess()
+    +{static} DataAccess getInstance(String tag)
+    + void add(SanPham s)
+    + void inDS()
+}
+
+class SanPhan{}
+
+DataAccess *--> SanPhan:sps
+@enduml

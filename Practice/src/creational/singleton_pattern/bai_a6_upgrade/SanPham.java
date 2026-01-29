@@ -1,4 +1,4 @@
-package creational.singleton_pattern.bai_a6;
+package creational.singleton_pattern.bai_a6_upgrade;
 
 public class SanPham {
     String id, ten;

@@ -1,4 +1,4 @@
-package creational.singleton;
+package creational.singleton_pattern;
 
 public enum Candidate {
     DONAL_TRUMP,

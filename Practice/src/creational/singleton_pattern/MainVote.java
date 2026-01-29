@@ -1,4 +1,4 @@
-package creational.singleton;
+package creational.singleton_pattern;
 
 public class MainVote {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package sesson_1.bai_j1;
-
-import java.sql.SQLOutput;
+package session_1.bai_j1;
 
 public class Main {
     public static void main(String[] args) {

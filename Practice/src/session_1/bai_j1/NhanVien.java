@@ -1,4 +1,4 @@
-package sesson_1.bai_j1;
+package session_1.bai_j1;
 
 public class NhanVien {
     private String ten, diaChi;

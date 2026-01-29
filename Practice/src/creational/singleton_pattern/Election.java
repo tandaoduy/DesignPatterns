@@ -1,4 +1,4 @@
-package creational.singleton;
+package creational.singleton_pattern;
 
 import java.util.ArrayList;
 import java.util.List;

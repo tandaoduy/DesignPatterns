@@ -1,4 +1,4 @@
-package sesson_1.bai_j1;
+package session_1.bai_j1;
 
 import java.util.ArrayList;
 import java.util.List;
