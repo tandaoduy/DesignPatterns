@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum PizzaType {
+PHOMAI
+BO
+HAISAN
+}
+
+abstract class Pizza{
+    + StringBuilder();
+    + {abstract}  void prepare()
+    + {abstract} void bake()
+    + {abstract} void cut()
+    + {abstract} void box()
+}
+
+abstract Class PizzaStore{
+    +  {abstract} createPizza()
+    +  orderPizza()
+}
+
+class VietNamPizzaStore{
+    + createPizza()
+}
+class PhoMaiPizza{
+    + void prepare()
+    + void bake()
+    + void cut()
+    + void box()
+}
+class HaiSanPizza{
+    + void prepare()
+    + void bake()
+    + void cut()
+    + void box()
+}
+class BoPizza{
+    + void prepare()
+    + void bake()
+    + void cut()
+    + void box()
+}
+PizzaStore <--VietNamPizzaStore
+Pizza <-- PhoMaiPizza
+Pizza <-- HaiSanPizza
+Pizza <-- BoPizza
+
+@enduml
