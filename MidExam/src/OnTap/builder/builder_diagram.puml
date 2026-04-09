@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+ 'product'
+class Computer{
+    - String cpu
+    - String ram
+    - String gpu
+    - String storage
+    + void setCPU(String CPU)
+    + void setRAM(String ram)
+    + void setGPU(String gpu)
+    + void setStorage(String storage)
+    + void showInfo()
+}
+
+'builder'
+interface ComputerBuilder{
+    + void buildCPU()
+    + void buldRam()
+    + void buildGPU()
+    + void buildStorage()
+    + Computer getComputer()
+    'kết quả trả về 1 đối tượng'
+}
+
+class GamingComputerBuilder{
+    - Computer computer
+    +GamingComputerBuilder()
+    + void buildCPU()
+    + void buldRam()
+    + void buildGPU()
+    + void buildStorage()
+    + Computer getComputer()
+    'kết quả trả về 1 đối tượng'
+}
+
+class OfficeComputerBuilder{
+    'chứa cái đối tượng là sp để khi tạo thì chỉ build thêm ... trên cái computer đó'
+    - Computer computer
+    +GamingComputerBuilder()
+    + void buildCPU()
+    + void buldRam()
+    + void buildGPU()
+    + void buildStorage()
+    + Computer getComputer()
+    'kết quả trả về 1 đối tượng'
+}
+
+'dirrector'
+class Director{
+    - ComputerBuilder builder
+    + void setBuilder(ComputerBuilder builder)
+    + void constructPC
+}
+
+ComputerBuilder <|.. GamingComputerBuilder
+ComputerBuilder <|.. OfficeComputerBuilder
+Director --> ComputerBuilder:uses
+GamingComputerBuilder --> Computer: builds
+OfficeComputerBuilder --> Computer: builds
+
+@enduml

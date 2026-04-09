@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class MoneyDispenser{
+    # MoneyDispenser nextDispenser
+    + void setNextDispenser(MoneyDispenser nextDispenser)
+    +{abstract} void dispense(int amount)
+}
+
+class DenominationDipenser{
+    - int denomination
+    +DenominationDipenser (int denomination)
+    + void dispense (int amount)
+}
+
+class Client
+class ATM_maching{
+    + MoneyDispenser getDispenserChain(int maxDenomination)
+}
+
+MoneyDispenser --> MoneyDispenser: nextDispenser
+MoneyDispenser <|-- DenominationDipenser
+Client ..> ATM_maching:uses
+ATM_maching ..> MoneyDispenser:creates chain
+@enduml

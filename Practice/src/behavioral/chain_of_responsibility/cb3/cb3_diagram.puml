@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class ElectriccityCaculator{
+    # ElectriccityCaculator nextCalculator
+    + ElectriccityCaculator setNextCalculator(
+        ElectriccityCaculator nextCalculator)
+    + {abstract} double caculateBill(int kwh)
+}
+
+class TierCaculator{
+    - String tierName
+    - int capacity
+    - double price
+    +TierCaculator(String tierName, int capacity, double price)
+    + double caculateBill(int kwh)
+    }
+
+class Client{}
+
+Client ..> ElectriccityCaculator: uses
+TierCaculator --|> ElectriccityCaculator
+ElectriccityCaculator --> ElectriccityCaculator:nextCalculator
+@enduml

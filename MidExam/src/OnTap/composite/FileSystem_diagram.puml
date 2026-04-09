@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface FileSystemComponent{
+    + int getSize()
+    + int showDetails()
+}
+
+class File{
+    - String name
+    - int getSize
+    + File(String name, int size)
+    + int getSize()
+    + void Detail()
+}
+
+class Folder{
+    - String name
+    + List<FileSystemComponent> components
+    + Folder(String name)
+    + void add(FileSystemComponent component)
+    + void remove(FileSystemComponent component)
+    +  int getSize()
+     + void Detail()
+
+
+}
+
+
+FileSystemComponent <|.. File:implemements
+FileSystemComponent <|.. Folder:implemements
+Folder o--> FileSystemComponent: contains
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class GradeEvaluator{
+    # GradeEvaluator nextEvaluator
+    +GradeEvaluator setNextEvaluator(GradeEvaluator nextEvaluator)
+    + {abstract} void evaluate(doble score)
+}
+
+class StandardGradeEvaluator{
+    - String gradeName
+    - double minScore
+    - double maxScore
+    - boolean isMaxClusive
+    + StandardGradeEvaluator()
+    + void evaluate(doble score)
+}
+
+class Client
+
+Client ..> GradeEvaluator:uses
+GradeEvaluator --> GradeEvaluator: nextEvaluator
+GradeEvaluator <|-- StandardGradeEvaluator
+@enduml

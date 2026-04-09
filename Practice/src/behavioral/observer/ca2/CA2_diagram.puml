@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class MyButton{
+    + click()
+    + attach(Listener listener)
+}
+
+interface Listener{
+    + void onClick()
+}
+class Activity{
+    + int count = 0
+    + void onClick()
+}
+
+Activity <|.. Listener
+ Activity --> MyButton
+MyButton -->Listener: activity
+@enduml

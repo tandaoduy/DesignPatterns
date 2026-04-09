@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class MyStream<T>{
+    + void addListener(listener l)
+    + void addEvent(T t)
+}
+
+interface Listener<T>{
+    liten((T t)
+}
+class Client<List<MonHoc>>
+class MonHoc{
+    String ten, soTC
+}
+class DataAccess
+
+MyStream o--> Listener:listeners
+Listener <|.. Client
+Client --> MyStream:stream
+DataAccess --> MyStream:stream
+DataAccess *--> MonHoc:monhocs
+note left of MyStream
+    phương thức addEvent là phương thức notify
+
+end note
+
+@enduml
