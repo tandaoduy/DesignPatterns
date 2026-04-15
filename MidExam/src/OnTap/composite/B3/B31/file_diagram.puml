@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class AbstractFile{
+    # String name, path
+    + String getPath()
+   + {abstract} String getStringTreeFolder()
+   + {abstract} void addItem(AbstractFile f)
+   + {abstract} void removeItem(AbstractFile f)
+}
+class File
+class Folder
+
+AbstractFile <|-- File
+AbstractFile <|-- Folder
+Folder *--> AbstractFile:files
+
+
+@enduml

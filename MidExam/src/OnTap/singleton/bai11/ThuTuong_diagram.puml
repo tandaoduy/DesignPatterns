@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PrimeMinister{
+    - {static} PrimeMinister instance
+    - List <String> decree
+    '-List<Minister> decree'
+    - PrimeMinister()
+    + {static} PrimeMinister getInstance()
+    + void receiveDecree(String content)
+    + void showAllDecree()
+}
+
+class Minister{
+    - String name
+    + Minister(String name)
+    + void proposeDecree(String content)
+}
+
+PrimeMinister *-->Minister
+PrimeMinister <--PrimeMinister
+
+
+@enduml

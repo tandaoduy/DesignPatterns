@@ -17,7 +17,7 @@ public class ChatMediator implements IChatMediator {
 
     @Override
     public void sendMesseage(String message, ChatUser form, String told) {
-        if(ChatUser)
+
     }
 
     @Override

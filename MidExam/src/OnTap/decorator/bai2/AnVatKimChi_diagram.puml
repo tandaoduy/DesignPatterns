@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IAnVat{
+    + double TinhTien()
+    + String getMoTa()
+}
+class SanPhamCoBan{
+    - string tem, mota
+    - double gia
+    + double TinhTien()
+    + String getMoTa()
+}
+abstract class TuyChonDecorator{
+    # IAnVat sps
+    + TuyChonDecorator(IAnVat sps)
+    + double TinhTien()
+    + String getMoTa()
+}
+class ThemTopping{
+    - String tenTopping
+    +ThemTopping(IAnVat sps, String tenTopping)
+
+    + double TinhTien()
+    + String getMoTa()
+
+}
+class ThemSot{
+    - String tenSot
+    +ThemTopping(IAnVat sps, String tenSot)
+    + double TinhTien()
+
+    + String getMoTa()
+
+}
+class DongGoi{
+    + DongGoi(IAnVat sps)
+    + double TinhTien()
+    + String getMoTa()
+
+}
+class ApMaGiamGia{
+    - String maGiam
+    - double phanTram
+    + ApMaGiamGia(IAnVat sps)
+    + String getMoTa()
+
+
+}
+
+IAnVat <|.. SanPhamCoBan
+IAnVat <|.. TuyChonDecorator
+IAnVat <--o TuyChonDecorator
+TuyChonDecorator <|-- ThemSot
+TuyChonDecorator <|-- ThemTopping
+TuyChonDecorator <|-- ApMaGiamGia
+TuyChonDecorator <|-- DongGoi
+
+
+@enduml

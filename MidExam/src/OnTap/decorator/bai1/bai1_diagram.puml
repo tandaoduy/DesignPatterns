@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Interface IPhoto{
+    + void showPhoto()
+}
+class BasicPhoto{
+    + void showPhoto()
+}
+Abstract class PhotoDecorator{
+    # IPhoto photos
+    + PhotoDecorator(IPhoto photos)
+    + void showPhoto()
+
+}
+class BorderDecorator{
+
+    + BorderDecorator(IPhoto photos)
+    + void showPhoto()
+    + void drawBorder()
+}
+class WaterMarkDecorator{
+
+    + WaterMarkDecorator(IPhoto photos)
+    + void showPhoto()
+    + void insertWaterMark()
+}
+class FilterDecorator{
+
+    + FilterDecorator(IPhoto photos)
+    + void showPhoto()
+    + void applyFilter()
+}
+
+IPhoto <|.. BasicPhoto
+IPhoto <|.. PhotoDecorator
+IPhoto <--o PhotoDecorator
+PhotoDecorator <|-- BorderDecorator
+PhotoDecorator <|-- FilterDecorator
+PhotoDecorator <|-- WaterMarkDecorator
+
+@enduml

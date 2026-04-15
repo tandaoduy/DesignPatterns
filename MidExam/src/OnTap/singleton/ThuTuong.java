@@ -11,7 +11,7 @@ public class ThuTuong {
 
     //3. static method
     // static thộc về lớp, truy cập thông qua tên lớp, không truy cập thông qua đối tượng
-    public ThuTuong getInstance(){
+    public static ThuTuong getInstance(){
         //chưa có thì tạo mới - khởi tạo muộn: chưa c thì tạo, ế
         //lazy intitialization
         if (instance == null){

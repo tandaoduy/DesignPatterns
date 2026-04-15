@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Logger{
+    - {static} Logger instance
+    - int count
+    - Logger()
+    + {static} Logger getInstance()
+    'hàm ghi log'
+    + void log(String message)
+}
+
+class Module{
+    - String moduleName
+    + Moudule (String moduleName)
+    + void operation (String task)
+}
+
+Logger <-- Logger:  instance
+Module ..> Logger:uses
+
+
+
+@enduml

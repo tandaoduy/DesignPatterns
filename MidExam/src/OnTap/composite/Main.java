@@ -1,5 +1,4 @@
 package OnTap.composite;
-
 public class Main {
     public static void main(String[] args) {
         FileSystemComponent File1 = new File("đề thi cuối kì.pdf",150);

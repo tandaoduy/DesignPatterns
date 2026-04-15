@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AttendanceSystem{
+    - {static} AttendanceSystem instance
+    - List<Student> attendes
+    - AttendanceSystem()
+    + {static} AttendanceSystem getInstance()
+    + void add(String mssv)
+    + void showList()
+
+}
+
+class Student{
+    - Sring MSSV
+    + Student(Sring MSSV)
+    + void checkIn()
+}
+
+Student ..> AttendanceSystem: "Điểm danh"
+AttendanceSystem o--> Student: "quản lý"
+
+@enduml

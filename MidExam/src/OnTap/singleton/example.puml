@@ -1,0 +1,23 @@
+
+@startuml
+title Ví dụ các mối quan hệ UML
+
+' 1. Association (Kết hợp)
+Customer --> Order : "đặt hàng"
+
+' 2. Inheritance (Kế thừa)
+Vehicle <|-- Car
+
+' 3. Realization (Hiện thực hóa)
+interface Shape
+Shape <|.. Circle
+
+' 4. Dependency (Phụ thuộc)
+Printer ..> Document : "in"
+
+' 5. Aggregation (Thu gom)
+University o-- Student
+
+' 6. Composition (Cấu thành)
+House *-- Room
+@enduml

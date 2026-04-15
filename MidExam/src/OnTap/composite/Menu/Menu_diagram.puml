@@ -1,0 +1,24 @@
+  @startuml
+'https://plantuml.com/class-diagram
+
+abstract AbstractMenu{
+    - String name
+    + {abstract}String getStringTreeMenu()
+    + {abstract} int getPrice()
+    + {abstract}void addDish(AbstractMenu d)
+}
+class Dish{
+    - int price
+    + Dish(int price)
+    + int getPrice()
+}
+class Combo{
+
+}
+
+AbstractMenu <|-- Dish
+AbstractMenu <|-- Combo
+Combo *--> AbstractMenu:"dishs"
+
+
+@enduml

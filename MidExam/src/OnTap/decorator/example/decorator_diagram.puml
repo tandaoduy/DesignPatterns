@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ICoffee
+class PlainCoffee
+Abstract CoffeeDecorator
+class MilkCoffee
+class SugarCoffe
+
+
+ICoffee <|.. PlainCoffee
+ICoffee <|.. CoffeeDecorator
+ICoffee <-- CoffeeDecorator
+CoffeeDecorator <|-- MilkCoffee
+CoffeeDecorator <|-- SugarCoffe
+@enduml

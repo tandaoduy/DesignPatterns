@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class AppSetting{
+    -String theme, language
+    - int fontSize
+    -{static} AppSetting instance
+    - AppSetting()
+    + {static} AppSetting getInstance()
+    + void getTheme()
+    + void setTheme(String theme)
+    + void getLanguage()
+    + void setLanguage(String language)
+    + void getLanguage()
+    + void setFontSize(int fontSize)
+    + void showConfig()
+}
+class Client
+
+Client ..> AppSetting: uses
+AppSetting <-- AppSetting: instance
+
+@enduml
