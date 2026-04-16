@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+interface IPizza
+class Pizza
+abstract class PizzaDecorator
+
+
+@enduml
