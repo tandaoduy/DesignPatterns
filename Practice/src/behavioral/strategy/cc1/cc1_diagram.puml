@@ -1,27 +1,32 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+class context{
+    - ITinh tinhToan
+    + void setTinhToan(ITinh tinhToan)
+    + float tinh(float a, float b)
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+}
+interface ITinh{
+    + float tinh(float a, float b)
+}
+class Cong{
+    + float tinh(float a, float b)
+}
+class Tru{
+    + float tinh(float a, float b)
+}
+class Nhan{
+    + float tinh(float a, float b)
+}
+class Chia{
+    + float tinh(float a, float b)
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
+ITinh <|.. Chia
+ITinh <|.. Cong
+ITinh <|.. Tru
+ITinh <|..Nhan
+context o--> ITinh
 
 @enduml

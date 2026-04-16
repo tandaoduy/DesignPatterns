@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract ATMState{
+    + void withdraw(ATMMachine context, int amount)
+}
+class ATMMachine{
+        - ATMState currentState
+        - int cashInMachine
+        - int MAX_WITHDRAWAL
+        + ATMMachine(int initialCash)
+        + void setState(ATMState state)
+        + void withdraw(int amount)
+        +int checkSoTienConLai()
+        + void themTienVaoMay(int cash)
+        + int getMaxWithDrawal()
+}
+class SanSang{
+    + void withdraw(ATMMachine context, int amount)
+}
+class HanChe{
+    + void withdraw(ATMMachine context, int amount)
+}
+class HetTien{
+    + void withdraw(ATMMachine context, int amount)
+}
+
+ATMMachine o-->ATMState
+ATMState <|-- SanSang
+ATMState <|-- HanChe
+ATMState <|-- HetTien
+@enduml

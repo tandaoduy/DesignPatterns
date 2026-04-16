@@ -1,27 +1,51 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+class MatHang{
+    - String ten
+    - int soLuong
+    - double donGia
+    + MatHang(string ten, int sl, double gia)
+    +  double ThanhTien()
+    + String tótring()
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
+}
+interface IThanhToan{
+    + double tinhTienGiam(Double tongTienHang)
+ }
+class ThanhToanCOD{
+    + double tinhTienGiam(Double tongTienHang)
+}
+class ThanhToanAirPay{
+    + double tinhTienGiam(Double tongTienHang)
+}
+interface IKhuyenMai{
+    + double tinhTienKhuyenMai(Double tongTienHang)
 
-class ArrayList {
-Object[] elementData
-size()
+}
+class KhuyenMaiPhanTraMGiamToiDa{
+    - double phanTramGiam
+    - double maGiamToiDa
+    + KhuyenMaiPhanTraMGiamToiDa(double phanTramGiam, double maGiamToiDa)
+     + double tinhTienKhuyenMai(Double tongTienHang)
+}
+class GioHang{
+    - List<MatHang> dsMH
+    - IThanhToan hinhthucThanhToan
+    - IKhuyenMai hinhthucKhuyenMai
+    + void them(MatHang mh)
+    + void setHinhThucThanhToan(IThanhToan tt)
+    + void setHinhThucKhuyenMai(IKhuyenMai km)
+    + double tinhTongTienHang()
+    + void thanhToan()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
+IThanhToan <|.. ThanhToanCOD
+IThanhToan <|.. ThanhToanAirPay
+IKhuyenMai <|..KhuyenMaiPhanTraMGiamToiDa
+GioHang --> MatHang: ds MatHang
+GioHang o-> IThanhToan: hinhthucThanhToan
+GioHang o-> IKhuyenMai: hinhthucKhuyenMai
 
 @enduml
